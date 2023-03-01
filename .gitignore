@@ -1,0 +1,5 @@
+.env
+env.php
+.parcel-cache/
+dist/
+node_modules/
