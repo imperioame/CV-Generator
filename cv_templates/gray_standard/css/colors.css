@@ -1,0 +1,30 @@
+html {
+    --standard_text_color: gray;
+    --lines_dark_color: lightslategray;
+    --lines_light_color: lightgray;
+    --black_color: black;
+    --dark_blue: rgb(22, 37, 58);
+    --light_green_color: rgb(242, 255, 247);
+    --pure_white: white;
+    --half_transparent_black: rgba(0, 0, 0, 0.5);
+    --main_color: #af2024;
+    --main_darker_color: #3d1215;
+    --complementary_color: #424268;
+    --light_complementary_color: #8989d8;
+}
+
+.main_color{
+    color: var(--main_color) !important;
+}
+
+.main_darker_color{
+    color: var(--main_darker_color) !important;
+}
+
+.complementary_color{
+    color: var(--complementary_color) !important;
+}
+
+.border_complementary_color{
+    border-color: var(--complementary_color) !important;
+}
