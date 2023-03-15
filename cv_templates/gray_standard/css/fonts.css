@@ -1,0 +1,37 @@
+
+@font-face {
+    font-family: "Oswald_regular";
+    src: url(../fonts/Oswald-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Oswald_light";
+    src: url(../fonts/Oswald-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Source_sans_light";
+    src: url(../fonts/SourceSansPro-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Source_Sans_regular";
+    src: url(../fonts/SourceSansPro-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Source_sans_extra_light";
+    src: url(../fonts/SourceSansPro-ExtraLight.ttf);
+    font-weight: 100;
+}
+
+
+@font-face {
+    font-family: "Source_sans_bold";
+    src: url(../fonts/SourceSansPro-Bold.ttf);
+    font-weight: 700;
+}

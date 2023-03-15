@@ -2,44 +2,6 @@
     transition: .5s ease-in-out;
 }
 
-@font-face {
-    font-family: "Oswald_regular";
-    src: url(../fonts/Oswald-Regular.ttf);
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Oswald_light";
-    src: url(../fonts/Oswald-Light.ttf);
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "Source_sans_light";
-    src: url(../fonts/SourceSansPro-Light.ttf);
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "Source_Sans_regular";
-    src: url(../fonts/SourceSansPro-Regular.ttf);
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Source_sans_extra_light";
-    src: url(../fonts/SourceSansPro-ExtraLight.ttf);
-    font-weight: 100;
-}
-
-
-@font-face {
-    font-family: "Source_sans_bold";
-    src: url(../fonts/SourceSansPro-Bold.ttf);
-    font-weight: 700;
-}
-
-
 .mt-2 {
     margin-top: 10%;
 }
@@ -145,13 +107,13 @@ body a,
 body p,
 body li,
 body small {
-    color: gray;
+    color: var(--standard_text_color);
     font-family: "Source_sans_light", sans-serif;
     font-weight: 300;
 }
 
 body h4 {
-    color: black;
+    color: var(--black_color);
     font-family: "Source_sans_light", sans-serif;
     font-weight: 300;
 
@@ -197,21 +159,22 @@ header h1 {
 }
 
 header h2 {
-    border-left: 1px solid rgb(80, 80, 80);
+    border-left: 1px solid;
     padding-left: 15px;
     font-family: "Source_sans_light", sans-serif;
-    color: gray;
+    color: var(--standard_text_color);
     font-size: 1em;
 }
 
 
 header ul {
-    border-left: 1px solid rgb(80, 80, 80);
+    border-left: 1px solid;
     padding-left: 15px;
     font-size: 0.9em;
 }
 
 #foto_perfil {
+    position: relative;
     text-align: center;
     width: 20%;
     margin: 0 5%;
@@ -221,38 +184,66 @@ header ul {
     cursor: pointer;
     box-sizing: border-box;
     width: 100%;
-    border: 0.7em solid lightgray;
     border-radius: 50%;
-    animation: borde 4s infinite;
     transition: 1s ease;
 }
 
+#foto_perfil #profile_img_border_base {
+    border-radius: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+    width: calc(100% + 1.3em);
+    border: 0.7em solid var(--lines_light_color);
+    border-top: 0.7em solid var(--complementary_color);
+    position: absolute;
+    left: calc(1.3em / 2 * -1);
+    top: calc(1.3em / 2 * -1);
+    animation: borde 8s cubic-bezier(.65,0,.35,1) infinite alternate-reverse;
+    /*cubic-bezier(1,0,0,1)*/
+}
 
+#foto_perfil #profile_img_border_base::after{
+    content: " ";
+    display: block;
+    padding-bottom: 100%;
+}
+
+@keyframes borde {
+    0%,25%{
+        transform: rotate(-45deg);
+    }
+    75%,
+    100% {
+        transform: rotate(calc(360deg  * 6 - 45deg));
+    }
+}
+
+/*
 @keyframes borde {
 
     0%,
     100% {
-        border: 0.7em solid lightgray;
-        border-top: 0.7em solid darkgray;
+        border: 0.7em solid var(--lines_light_color);
+        border-top: 0.7em solid var(--complementary_color);
     }
 
     25% {
-        border: 0.7em solid lightgray;
-        border-right: 0.7em solid darkgray;
+        border: 0.7em solid var(--lines_light_color);
+        border-right: 0.7em solid var(--complementary_color);
     }
 
     50% {
-        border: 0.7em solid lightgray;
-        border-bottom: 0.7em solid darkgray;
+        border: 0.7em solid var(--lines_light_color);
+        border-bottom: 0.7em solid var(--complementary_color);
     }
 
     75% {
-        border: 0.7em solid lightgray;
-        border-left: 0.7em solid darkgray;
+        border: 0.7em solid var(--lines_light_color);
+        border-left: 0.7em solid var(--complementary_color);
     }
 
 }
-
+*/
 
 #info_principal_header {
     margin: 0;
@@ -269,7 +260,7 @@ header ul {
 
 
 #idioma_cv a:hover {
-    color: rgb(22, 37, 58);
+    color: var(--dark_blue);
 }
 
 #idioma_cv a:not([href]) {
@@ -318,11 +309,11 @@ header ul {
 .progress_bar {
     width: 100%;
     height: .5em;
-    accent-color: lightslategray;
+    accent-color: var(--complementary_color);
 }
 
 .progress_bar:not([value]) {
-    accent-color: lightgray;
+    accent-color: var(--lines_light_color);
     border: 0;
 }
 
@@ -366,7 +357,7 @@ header ul {
 }
 
 .border_left {
-    border-left: 2px solid rgb(80, 80, 80);
+    border-left: 2px solid var(--lines_dark_color);
     padding-left: 20px;
 }
 
@@ -394,11 +385,11 @@ header ul {
 }
 
 #download_pdf {
-    border: 5px solid rgb(211, 211, 211);
+    border: 5px solid var(--light_complementary_color);
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background-color: rgb(242, 255, 247);
+    background-color: var(--light_green_color);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -415,6 +406,7 @@ header ul {
 }
 
 #download_pdf p {
+    color: var(--complementary_color);
     text-align: center;
     position: relative;
     top: 3px;
@@ -442,8 +434,8 @@ header ul {
     margin: 0 7%;
     width: 5px;
     height: 5px;
-    border: 2px solid lightslategray;
-    background-color: white;
+    border: 2px solid var(--lines_dark_color);
+    background-color: var(--pure_white);
     border-radius: 50%;
     display: inline-block;
 }
@@ -459,12 +451,12 @@ header ul {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--half_transparent_black);
     display: flex;
     transition: 0s;
 }
 
-#contenedor_perfil_ampliado *{
+#contenedor_perfil_ampliado * {
     box-sizing: border-box;
 }
 
@@ -492,13 +484,13 @@ header ul {
     cursor: pointer;
 }
 
-#boton_cerrar img{
+#boton_cerrar img {
     box-shadow: none;
 }
 
 .links a {
     font-style: italic;
-    color: rgb(22, 37, 58);
+    color: var(--dark_blue);
 }
 
 #boton_cerrar a img {

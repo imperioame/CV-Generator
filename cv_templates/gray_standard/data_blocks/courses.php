@@ -1,11 +1,10 @@
-<?php require_once 'configs/conection.php' ?>
+<?php require_once 'configs/conection.php'; ?>
 
 <article id="idioma_usuario">
-    <div class="container_de_titular_con_circulos flex_al_centro primer_container_titular">
-        <div class="circulito"></div>
-        <h3><?= $content_sections[$current_language_short_name]['courses']; ?></h3>
-        <div class="circulito"></div>
-    </div>
+    <?php require_once './cv_templates/gray_standard/data_blocks/create_title_with_circles.php';
+    create_title_with_circles($content_sections[$current_language_short_name]['courses']);
+    ?>
+
 
     <?php 
     foreach($courses as $course){
@@ -17,15 +16,15 @@
         <br>
         <?= $course['institucion']; ?>
         <br>
-            <?php 
+        <?php 
             if(not_empty($course['fecha_completitud'])){
                 ?>
-            <small>
+        <small>
             <?php 
                 echo convert_datetime_to_M_Y($course['fecha_completitud']);
             ?>
-            </small>
-                <?php        
+        </small>
+        <?php        
             }
         ?>
     </p>

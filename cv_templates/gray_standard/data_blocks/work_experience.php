@@ -3,14 +3,14 @@
 <div id="experiencia_laboral">
     <div class="titular_separador_main">
         <img src="./img/icos/icons_Experiencia_laboral.svg" alt="<?= $content_sections[$current_language_short_name]['work_experience']; ?>">
-        <h3><?= $content_sections[$current_language_short_name]['work_experience']; ?></h3>
+        <h3 class="main_color"><?= $content_sections[$current_language_short_name]['work_experience']; ?></h3>
     </div>
-    <div class="border_left">
+    <div class="border_left border_complementary_color">
         <?php 
         foreach($work_experience as $job){
         ?>
         <div>
-            <div class="bullet"><div class="circulito"></div></div>
+            <div class="bullet"><div class="circulito border_complementary_color"></div></div>
             <h4><strong><?= $job['titulo_puesto']?></strong>
                 - <?= $job['empresa_organizacion']?>
             </h4>

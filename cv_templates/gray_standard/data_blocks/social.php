@@ -1,11 +1,10 @@
-<?php require_once 'configs/conection.php' ?>
+<?php require_once 'configs/conection.php'; ?>
 
 <article id="rrss">
-    <div class="container_de_titular_con_circulos flex_al_centro primer_container_titular">
-        <div class="circulito"></div>
-        <h3><?= $content_sections[$current_language_short_name]['social']; ?></h3>
-        <div class="circulito"></div>
-    </div>
+    <?php require_once './cv_templates/gray_standard/data_blocks/create_title_with_circles.php';
+            create_title_with_circles($content_sections[$current_language_short_name]['social']);
+        ?>
+
 
     <div class="container_rrss container_columnas">
         <?php
