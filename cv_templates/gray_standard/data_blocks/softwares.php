@@ -1,12 +1,10 @@
-<?php require_once 'configs/conection.php' ?>
+<?php require_once 'configs/conection.php'; ?>
 
 <article id="softwares">
+    <?php require_once './cv_templates/gray_standard/data_blocks/create_title_with_circles.php';
+                create_title_with_circles($content_sections[$current_language_short_name]['software']);
+            ?>
 
-    <div class="container_de_titular_con_circulos flex_al_centro primer_container_titular">
-        <div class="circulito"></div>
-        <h3><?= $content_sections[$current_language_short_name]['software']; ?></h3>
-        <div class="circulito"></div>
-    </div>
 
     <div id="container_software" class="container_columnas text-center">
         <?php

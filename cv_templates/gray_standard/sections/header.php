@@ -3,20 +3,22 @@
 
 <header class="container_filas_desktop mb-2">
     <div id="foto_perfil">
+        <div id="profile_img_border_base">
+        </div>
         <img src="<?=$relative_path_to_root . 'usr_data/' . $user_information['usuario'] . '/img/' . $user_information['foto_perfil'] ?>"
             alt="<?= $content_general[$current_language_short_name]['profile_picture'] . " " . $user_information['nombres'] . ' ' . $user_information['apellidos']?>"
             title="<?=  $content_general[$current_language_short_name]['profile_picture'] . " " . $user_information['nombres'] . ' ' . $user_information['apellidos']?>">
         <br>
     </div>
     <div id="info_principal_header">
-        <h1><?=$user_information['nombres'] . ' ' . $user_information['apellidos']?></h1>
-        <h2><?=$user_information['titulo_destacado']?>
+        <h1 class="main_color"><?=$user_information['nombres'] . ' ' . $user_information['apellidos']?></h1>
+        <h2 class="border_complementary_color"><?=$user_information['titulo_destacado']?>
             <br>
             <?=$user_information['profesion_destacada']?>
         </h2>
         <?php
             if($user_information['mostrar_correo'] || $user_information['mostrar_telefono']){
-                echo '<ul>';
+                echo '<ul class="border_complementary_color">';
                 if($user_information['mostrar_correo']){
                     echo '<li><a href="mailto:' . $user_information['correo'] . '">' . $user_information['correo'] . '</a></li>';
                 }

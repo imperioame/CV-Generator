@@ -1,16 +1,16 @@
-<?php require_once 'configs/conection.php' ?>
+<?php require_once 'configs/conection.php'; ?>
 
 <div id="actividades">
     <div class="titular_separador_main">
         <img src="img/icos/icons_Otras_actividades.svg" alt="<?= $content_sections[$current_language_short_name]['other_activities']; ?>">
-        <h3><?= $content_sections[$current_language_short_name]['other_activities']; ?></h3>
+        <h3 class="main_color"><?= $content_sections[$current_language_short_name]['other_activities']; ?></h3>
     </div>
-    <div class="border_left">
+    <div class="border_left border_complementary_color">
     <?php 
         foreach($other_activities as $activity){
         ?>
         <div>
-            <div class="bullet"><div class="circulito"></div></div>
+            <div class="bullet"><div class="circulito border_complementary_color"></div></div>
             <h4><strong><?= $activity['titulo_puesto']?></strong>
                 <?php
                 if(not_empty($activity['empresa_organizacion'])){
